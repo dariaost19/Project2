@@ -15,7 +15,11 @@ public interface Shape {
 }
 class Circle implements Shape{
 
+
     int radius;
+    Circle(int radius){
+        this.radius=radius;
+    }
 
     @Override
     public void calculatePerimeter() {
@@ -33,21 +37,25 @@ class Circle implements Shape{
 }
 class Square implements Shape{
     int side;
+    Square(int side){
+        this.side=side;
+    }
+
     @Override
     public void calculateArea() {
-        side=5;
+
         System.out.println(side*side);
     }
 
     @Override
     public void calculatePerimeter() {
-        side=5;
+
         System.out.println(4*side);
     }
 }
 class ShapeTester{
     public static void main(String[] args) {
-        Shape []shape={new Circle(),new Square()};
+        Shape []shape={new Circle(5),new Square(4)};
         for(Shape s:shape){
             s.calculatePerimeter();
             s.calculateArea();
